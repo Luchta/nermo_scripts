@@ -51,7 +51,7 @@ void CMouseCom::startUART()
     usleep(100000);
     sendNL();//flush the buffer, all new
     usleep(10000);
-    MotorSetup();
+   // MotorSetup();
 }
 
 void CMouseCom::setConsoleCcmnd(typCmd cmd, int val1, int val2, int val3){

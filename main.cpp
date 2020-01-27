@@ -5,16 +5,18 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Nermo Script\n";
     CMouseCom maus;
 
     maus.startUART();
     int Motor[13] = {00,01,02,03,10,11,12,13,20,21,22,23,24};
 
-    maus.sendNL();
+   // maus.sendNL();
     usleep(10000);
     
+
     //LED Check for Communication
+    std::cout << "Switching Motor LEDs Communication Test\n";
     for (int i=0;i<13;i++) {
         maus.ProcessSpine(CMouseCom::SetLed, Motor[i], 0);
     }
@@ -27,18 +29,23 @@ int main()
     for (int i=0;i<13;i++) {
         maus.ProcessSpine(CMouseCom::SetLed, Motor[i], 0); //switch all leds off
     }
-    
+
 
     ////Switch Motors OFF
-    //for (int i=0;i<13;i++) {
-    //maus.ProcessSpine(CMouseCom::SetMotorOff, Motor[i]);
-    //}
-
+/*  
+    std::cout << "Deactivating Motors!\n";
+    for (int i=0;i<13;i++) {
+    maus.ProcessSpine(CMouseCom::SetMotorOff, Motor[i]);
+   }
+*/
     ////Switch Power to Motors OFF
-    //maus.ProcessSpine(CMouseCom::MPwrOff,1);
+   // maus.ProcessSpine(CMouseCom::MPwrOff,1);
 
-    ////PowerCycle Motors
-   //maus.MotorPwrCycle();
+/* 
+   ////PowerCycle Motors
+    std::cout << "Motor Power Cycle!\n";
+    maus.MotorPwrCycle();
+*/
 
     //Set PID Parameters
     /*
